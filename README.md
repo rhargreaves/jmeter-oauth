@@ -1,19 +1,18 @@
 jmeter-oauth
 ============
-Apache JMeter OAuth.
+Apache JMeter OAuth. This is a clone from https://github.com/captrespect/jmeter-oauth
 
-Updated to work with JMeter 2.6
+Updated to work with JMeter 2.11
 
 This JAR implements a JMeter sampler called "OAuth Request". 
 It's based on HTTP Request with HTTPClient and supports 
 OAuth signing. 
 
-To buid, run maven in the jmeter directory,
+To buid, run gradle in the project root directory
 
-  cd jmeter
-  mvn package
+gradle farJar
 
-This will build the jar file in jmeter/target directory. OAuth 
+This will build the jar file in build/libs directory. OAuth 
 library is also included in the jar.
 
 To install the plugin, download the binary distribution of 
