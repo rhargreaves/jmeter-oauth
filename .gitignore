@@ -3,3 +3,4 @@ target/
 *.class
 example/oauth-provider/web/WEB-INF/classes/
 example/oauth-provider/web/WEB-INF/lib/
+*.project
