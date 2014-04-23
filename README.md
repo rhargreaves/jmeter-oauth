@@ -1,6 +1,8 @@
 jmeter-oauth
 ============
-Apache JMeter OAuth. This is a clone from https://github.com/captrespect/jmeter-oauth
+Apache JMeter OAuth. 
+
+Original code at https://github.com/captrespect/jmeter-oauth
 
 Updated to work with JMeter 2.11
 
