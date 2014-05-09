@@ -12,7 +12,7 @@ OAuth signing.
 
 To buid, run gradle in the project root directory
 
-gradle farJar
+gradle fatJar
 
 This will build the jar file in build/libs directory. OAuth 
 library is also included in the jar.
