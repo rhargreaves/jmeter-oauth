@@ -1,0 +1,35 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		classpath 'eu.appsatori:gradle-fatjar-plugin:0.2-rc1'
+	}
+}
+
+apply plugin: 'fatjar'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories { mavenCentral() }
+
+dependencies {
+	compile 'net.oauth.core:oauth:20100527'
+	compile 'org.apache.jmeter:ApacheJMeter_http:2.11', { ext { fatJarExclude = true } }
+}
+
+configurations.all {
+	resolutionStrategy {
+		// failOnVersionConflict()
+		force 'com.fifesoft:rsyntaxtextarea:2.5.0'
+	}
+}
+
+sourceCompatibility = 1.7
+
+archivesBaseName = 'ApacheJMeter_oauth'
+group = 'net.oauth.java.jmeter'
+version = '2.1'
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
