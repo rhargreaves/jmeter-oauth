@@ -426,9 +426,11 @@ public class OAuthSampler extends HTTPSampler2 {
     	}
 		
 	    final OAuthAccessor accessor = new OAuthAccessor(consumer);
-	    accessor.accessToken = getDecodedProperty(TOKEN);
-	    accessor.tokenSecret = getDecodedProperty(TOKEN_SECRET);
-
+		String accessToken = getDecodedProperty(TOKEN);
+		if(accessToken != null && accessToken.length() > 0) {
+			accessor.accessToken = getDecodedProperty(TOKEN);
+			accessor.tokenSecret = getDecodedProperty(TOKEN_SECRET);
+		}
     	// Convert arguments to OAuth parameters, URL-decoded if already encoded.
 	    List<OAuth.Parameter> list = 
 	    	new ArrayList<OAuth.Parameter>(getArguments().getArgumentCount());
@@ -467,9 +469,9 @@ public class OAuthSampler extends HTTPSampler2 {
 	    		getPropertyAsString(SIGNATURE_METHOD));
 	    
 	    if (accessor.accessToken != null && accessor.accessToken.length() > 0) {
-	    	message.addParameter(OAuth.OAUTH_TOKEN, accessor.accessToken);
-	    } else {
-	        message.addParameter(OAuth.OAUTH_TOKEN, "");
+			message.addParameter(OAuth.OAUTH_TOKEN, accessor.accessToken);
+		} else {
+	       //message.addParameter(OAuth.OAUTH_TOKEN, "");
 	    }
 	    
     	// Sign the message
