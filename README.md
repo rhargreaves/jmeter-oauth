@@ -2,7 +2,7 @@ JMeter OAuth
 ============
 Apache JMeter OAuth. Implements a JMeter sampler called "OAuth Request". It's based on HTTP Request with HTTPClient and supports OAuth signing.
 
-Code based on https://github.com/captrespect/jmeter-oauth, enhanced to not send an empty OAuth Token to the endpoint if 2-legged OAuth is used.
+Code based on https://github.com/captrespect/jmeter-oauth. This version is enhanced to not send an empty OAuth Token to the endpoint if 2-legged OAuth is used.
 
 Requirements
 ------------
